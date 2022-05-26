@@ -21,6 +21,7 @@ services:
     volumes:
       - ./tp-dacs-2022-external/src:/usr/src/app/src
       - ./tp-dacs-2022-external/db:/usr/src/app/db
+    hostname: 'dacs_external'
   dacs-be:
     build: ./tp-dacs-2022-be
     ports:
