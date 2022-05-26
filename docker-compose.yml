@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  dacs-mailer-db:
+    extends:
+      file: tp-dacs-2022-mailer/docker-compose.yml
+      service: dacs_redis_db
+    hostname: 'dacs_redis_db'
+  dacs-mailer-queue:
+    extends:
+      file: tp-dacs-2022-mailer/docker-compose.yml
+      service: dacs_mail_queue
+    ports:
+      - "9229:9231"
+    volumes:
+      - ./tp-dacs-2022-mailer/src:/usr/src/app/src
+  dacs-external:
+    build: ./tp-dacs-2022-external
+    ports:
+      - "4000:4000"
+      - "9229:9230"
+    volumes:
+      - ./tp-dacs-2022-external/src:/usr/src/app/src
+      - ./tp-dacs-2022-external/db:/usr/src/app/db
+  dacs-be:
+    build: ./tp-dacs-2022-be
+    ports:
+      - "3001:3001"
+      - "9229:9229"
+    volumes:
+      - ./tp-dacs-2022-be/src:/usr/src/app/src
+      - ./tp-dacs-2022-be/db:/usr/src/app/db

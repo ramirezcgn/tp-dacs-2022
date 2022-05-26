@@ -1,0 +1,16 @@
+[submodule "tp-dacs-2022-be"]
+	path = tp-dacs-2022-be
+	url = git@github.com:ramirezcgn/tp-dacs-2022-be.git
+	branch = main
+[submodule "tp-dacs-2022-fe"]
+	path = tp-dacs-2022-fe
+	url = git@github.com:ramirezcgn/tp-dacs-2022-fe.git
+	branch = main
+[submodule "tp-dacs-2022-external"]
+	path = tp-dacs-2022-external
+	url = git@github.com:ramirezcgn/tp-dacs-2022-external.git
+	branch = main
+[submodule "tp-dacs-2022-mailer"]
+	path = tp-dacs-2022-mailer
+	url = git@github.com:ramirezcgn/tp-dacs-2022-mailer.git
+	branch = main

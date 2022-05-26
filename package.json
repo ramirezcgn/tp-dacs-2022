@@ -1,0 +1,12 @@
+{
+  "name": "tp-dacs-2022",
+  "version": "1.0.0",
+  "scripts": {
+    "install-be": "cd tp-dacs-2022-be && npm install",
+    "install-external": "cd tp-dacs-2022-external && npm install",
+    "install-fe": "cd tp-dacs-2022-fe && npm install",
+    "install-mailer": "cd tp-dacs-2022-mailer && npm install",
+    "postinstall": "npm run install-be && npm run install-external && npm run install-fe && npm run install-mailer",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
