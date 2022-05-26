@@ -2,6 +2,10 @@
 
 ```sh
 git clone --recursive git@github.com:ramirezcgn/tp-dacs-2022.git
+
+cd tp-dacs-2022
+
+git submodule foreach git checkout main
 ```
 
 ### download submodules at once (without clone recursive)
