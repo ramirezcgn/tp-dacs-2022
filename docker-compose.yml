@@ -10,14 +10,14 @@ services:
       file: tp-dacs-2022-mailer/docker-compose.yml
       service: dacs_mail_queue
     ports:
-      - "9229:9231"
+      - "9231:9231"
     volumes:
       - ./tp-dacs-2022-mailer/src:/usr/src/app/src
   dacs-external:
     build: ./tp-dacs-2022-external
     ports:
       - "4000:4000"
-      - "9229:9230"
+      - "9230:9230"
     volumes:
       - ./tp-dacs-2022-external/src:/usr/src/app/src
       - ./tp-dacs-2022-external/db:/usr/src/app/db
