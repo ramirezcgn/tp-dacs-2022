@@ -1,5 +1,10 @@
 version: "3.8"
 services:
+  turismo-control:
+    build: ./turismo-control
+    ports:
+      - "8080:8080"
+    hostname: 'turismo-control'
   dacs-mailer-db:
     extends:
       file: tp-dacs-2022-mailer/docker-compose.yml

@@ -14,3 +14,6 @@
 	path = tp-dacs-2022-mailer
 	url = git@github.com:ramirezcgn/tp-dacs-2022-mailer.git
 	branch = main
+[submodule "turismo-control"]
+	path = turismo-control
+	url = git@github.com:FRRe-DACS/turismo-control.git
