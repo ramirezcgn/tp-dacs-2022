@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "name": "Docker: Attach to Node DACS BE",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/tp-dacs-2022-be",
+      "remoteRoot": "/usr/src/app"
+    },
+    {
+      "name": "Docker: Attach to Node DACS External",
+      "type": "node",
+      "request": "attach",
+      "port": 9230,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/tp-dacs-2022-external",
+      "remoteRoot": "/usr/src/app"
+    },
+    {
+      "name": "Docker: Attach to Node DACS Mailer",
+      "type": "node",
+      "request": "attach",
+      "port": 9231,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/tp-dacs-2022-mailer",
+      "remoteRoot": "/usr/src/app"
+    }
+  ]
+}
