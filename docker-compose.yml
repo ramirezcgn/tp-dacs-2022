@@ -3,13 +3,13 @@ services:
   turismo-control:
     build: ./turismo-control
     ports:
-      - "8080:8080"
-    hostname: 'turismo-control'
+      - "5000:8080"
+    hostname: "turismo_control"
   dacs-mailer-db:
     extends:
       file: tp-dacs-2022-mailer/docker-compose.yml
       service: dacs_redis_db
-    hostname: 'dacs_redis_db'
+    hostname: "dacs_redis_db"
   dacs-mailer-queue:
     extends:
       file: tp-dacs-2022-mailer/docker-compose.yml
@@ -18,6 +18,7 @@ services:
       - "9231:9231"
     volumes:
       - ./tp-dacs-2022-mailer/src:/usr/src/app/src
+    hostname: "dacs_mailer"
   dacs-external:
     build: ./tp-dacs-2022-external
     ports:
@@ -26,7 +27,7 @@ services:
     volumes:
       - ./tp-dacs-2022-external/src:/usr/src/app/src
       - ./tp-dacs-2022-external/db:/usr/src/app/db
-    hostname: 'dacs_external'
+    hostname: "dacs_external"
   dacs-be:
     build: ./tp-dacs-2022-be
     ports:
@@ -35,3 +36,20 @@ services:
     volumes:
       - ./tp-dacs-2022-be/src:/usr/src/app/src
       - ./tp-dacs-2022-be/db:/usr/src/app/db
+    hostname: "dacs_be"
+  dacs_gateway:
+    extends:
+      file: tp-dacs-2022-fe/docker-compose.yml
+      service: dacs_gateway
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tp-dacs-2022-fe/gateway/config.js:/rproxy/src/config.js
+    hostname: "dacs_gateway"
+  dacs_fe:
+    extends:
+      file: tp-dacs-2022-fe/docker-compose.yml
+      service: dacs_fe
+    ports:
+      - "3000:3000"
+    hostname: "dacs_fe"
